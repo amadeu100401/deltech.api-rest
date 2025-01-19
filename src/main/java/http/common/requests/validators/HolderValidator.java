@@ -1,10 +1,12 @@
 package http.common.requests.validators;
 
+
 import jakarta.annotation.Nonnull;
+import jakarta.validation.constraints.NotBlank;
 
-public interface holderValidator {
+public interface HolderValidator {
 
-    @Nonnull
+    @NotBlank
     String getHolderName();
 
     @Nonnull

@@ -2,6 +2,7 @@ package http.controllers;
 
 import application.useCase.CreateBankAccount;
 import http.common.requests.CreateBankAccountRequest;
+import jakarta.validation.Valid;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,7 @@ public class BankAccountController extends ExceptionHolder {
     }
 
     @PostMapping("/bank-account")
-    public String createBankAccount(@RequestBody @Validated CreateBankAccountRequest request) {
+    public String createBankAccount(@RequestBody @Valid CreateBankAccountRequest request) {
         var dto = request.toDTO();
         createBankAccount.createBankAccount(dto);
         return "Teste";

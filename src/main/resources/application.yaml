@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://mssql-190917-0.cloudclusters.net:18969;databaseName=delbank;encrypt=true;trustServerCertificate=true
-    username: admin
-    password: Amadeukkk123@
+    url: ${DATA_URL:jdbc:sqlserver://mssql-190917-0.cloudclusters.net:18969;databaseName=delbank;encrypt=true;trustServerCertificate=true}
+    username: ${DATA_USER:admin}
+    password: ${DATA_PASSWORD:Amadeukkk123@}
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   jpa:
@@ -11,10 +11,10 @@ spring:
     database-platform: org.hibernate.dialect.SQLServerDialect
 
   rabbitmq:
-    host: rabbitmq-190915-0.cloudclusters.net
-    port: 10050
-    username: admin
-    password: agkCAYWt
+    host: ${RABBIT_HOST:rabbitmq-190915-0.cloudclusters.net}
+    port: ${RABBIT_PORT:10050}
+    username: ${RABBIT_USERNAME:admin}
+    password: ${RABBIT_PASSWORD:agkCAYWt}
 
   logging:
     level:
