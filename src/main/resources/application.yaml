@@ -1,11 +1,38 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=seu_banco
-    username: seu_usuario
-    password: sua_senha
+    url: jdbc:sqlserver://mssql-190917-0.cloudclusters.net:18969;databaseName=delbank;encrypt=true;trustServerCertificate=true
+    username: admin
+    password: Amadeukkk123@
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
   jpa:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.SQLServerDialect
 
+  rabbitmq:
+    host: rabbitmq-190915-0.cloudclusters.net
+    port: 10050
+    username: admin
+    password: agkCAYWt
+
+  logging:
+    level:
+      root: INFO
+      org.springframework: DEBUG
+      com.deltech: TRACE
+      org.hibernate.SQL: DEBUG
+    file:
+      name: logs/application.log
+    pattern:
+      console: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+      file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: loggers
+    endpoint:
+      loggers:
+        enabled: true
