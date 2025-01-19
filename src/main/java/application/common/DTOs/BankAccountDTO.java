@@ -1,6 +1,7 @@
-package application.common.DTOS;
+package application.common.DTOs;
 
 import domain.entities.BankAccount;
+import http.common.responses.CreateBankAccountResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,6 +30,14 @@ public class BankAccountDTO {
                 .holderType(holder.isHolderType())
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
+                .build();
+    }
+
+    public CreateBankAccountResponse toResponse() {
+        return CreateBankAccountResponse.builder()
+                .type(type)
+                .holderName(holder.getHolderName())
+                .holderEmail(holder.getHolderEmail())
                 .build();
     }
 }

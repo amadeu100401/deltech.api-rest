@@ -1,14 +1,15 @@
-package http.common.responses;
+package application.common.DTOs;
 
-import http.common.requests.validators.HolderValidator;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RequestAccountHolder implements HolderValidator {
+public class AccountHolderDTO {
     private String holderName;
     private String holderEmail;
     private String holderDocument;

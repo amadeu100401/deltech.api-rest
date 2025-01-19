@@ -1,6 +1,6 @@
 package application.services.amqpServices.service;
 
-import application.common.DTOS.MessageWrapper;
+import application.common.DTOs.MessageWrapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;

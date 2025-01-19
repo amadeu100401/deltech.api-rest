@@ -1,8 +1,8 @@
 package http.common.requests;
 
-import application.common.DTOS.AccountHolderDTO;
-import application.common.DTOS.BankAccountDTO;
-import http.common.responses.RequestAccountHolder;
+
+import application.common.DTOs.AccountHolderDTO;
+import application.common.DTOs.BankAccountDTO;
 import http.common.requests.validators.createBankAcountValidator;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package application.common.DTOS;
+package http.common.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountHolderDTO {
+public class CreateBankAccountResponse {
+    private String type;
     private String holderName;
     private String holderEmail;
-    private String holderDocument;
-    private boolean holderType;
 }

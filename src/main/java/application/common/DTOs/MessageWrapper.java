@@ -1,4 +1,4 @@
-package application.common.DTOS;
+package application.common.DTOs;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

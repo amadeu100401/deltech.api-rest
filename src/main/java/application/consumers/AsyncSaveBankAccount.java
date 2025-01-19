@@ -1,7 +1,7 @@
 package application.consumers;
 
-import application.common.DTOS.BankAccountDTO;
-import application.common.DTOS.MessageWrapper;
+import application.common.DTOs.BankAccountDTO;
+import application.common.DTOs.MessageWrapper;
 import application.common.constants.QueueConstants;
 import application.services.saveBankAccount.SaveBankAccount;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -21,7 +21,7 @@ public class AsyncSaveBankAccount {
     @RabbitListener(queues = QueueConstants.SAVE_BANK_ACCOUNT_IN, concurrency = "2-5")
     public void saveEntity(String message) {
         try {
-            log.info("Persistando no banco de dados");
+            log.info("Enviando para a fila de persistência.");
 
             MessageWrapper<BankAccountDTO> messageWrapper = new ObjectMapper().readValue(message, new TypeReference<>() {});
 

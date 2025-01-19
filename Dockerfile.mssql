@@ -1,0 +1,23 @@
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+USER root
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV ACCEPT_EULA=Y
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg2 \
+    ca-certificates \
+    lsb-release \
+    apt-transport-https \
+    && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+    && curl -s https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-tools.list \
+    && rm -f /etc/apt/sources.list.d/microsoft-prod.list \
+    && apt-get update \
+    && apt-get install -y msodbcsql17 mssql-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+USER mssql
+
+CMD /opt/mssql/bin/sqlservr

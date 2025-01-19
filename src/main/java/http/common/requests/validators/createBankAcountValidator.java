@@ -1,6 +1,6 @@
 package http.common.requests.validators;
 
-import http.common.responses.RequestAccountHolder;
+import http.common.requests.RequestAccountHolder;
 import jakarta.annotation.Nonnull;
 
 public interface createBankAcountValidator {

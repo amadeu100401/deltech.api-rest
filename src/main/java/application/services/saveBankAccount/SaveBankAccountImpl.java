@@ -16,7 +16,7 @@ public class SaveBankAccountImpl implements SaveBankAccount{
     @Override
     public void saveBankAccount(BankAccount entity) {
         try {
-            log.info("Salvando conta bancária.");
+            log.info("Persistindo a conta bancária no bando de dados.");
             accountRepository.save(entity);
         } catch (Exception ex) {
             log.error(ex.getMessage());
