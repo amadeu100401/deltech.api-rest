@@ -11,7 +11,7 @@ Este documento explica como rodar o container da aplicação Deltech API Rest.
 2. Para iniciar o container, execute o seguinte comando no terminal:
 
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 3. Para parar o container, execute:
 ```bash
